@@ -4,8 +4,8 @@ sudo npm install --global yarn
 #from VSCode >
 yarn create vite p1
 cd p1
-touch yarn.lock
-    yarn
+touch yarn.lock [for vite v2]
+    yarn [for vite v1]
     yarn dev
 
 npm create vite p2
