@@ -1,0 +1,14 @@
+#from root >
+sudo npm install --global yarn
+
+#from VSCode >
+yarn create vite p1
+cd p1
+touch yarn.lock
+    yarn
+    yarn dev
+
+npm create vite p2
+cd p2
+    npm install
+    npm run dev
