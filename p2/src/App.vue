@@ -1,15 +1,6 @@
 <script setup>
-const message= 'Welcome. Get ready to master Vue.js 3!'
-const date = '1st August, 2023 '
-function getDate(){
-  const date = new Date()
-  return date.toDateString()
-}
-const data = {
-  message:'Welcome. Get ready to master Vue.js 3! - Obj',
-  date:getDate()+' -Obj',
-  tasks:['"No"',1,2,3,4,5,6,7]
-}
+// import {data} from './data/data'
+import data from './data/data'
 </script>
 
 <template>
