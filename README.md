@@ -1,1 +1,1 @@
-# ostad
+# Vite + Vue 3
