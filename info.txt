@@ -12,3 +12,23 @@ npm create vite p2
 cd p2
     npm install
     npm run dev
+
+
+Class Note:
+---------------new-----------
+
+---------------v-if---Vs---v-show-----------
+<script setup>
+    import {ref} from 'vue' 
+    const weather  = ref("s") 
+</script>
+<console>
+    document.getElementById('sunney').addEventListener('click',function(){
+        const status = document.getElementById('status').val()
+        alert(status)
+    })
+</console>
+<template>
+    <img id="sunney" src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7911203/weather-icon-md.png" alt="">
+    <input type="text" placeholder="Weather Status" class="text-center p-5" v-model="weather">
+</template>
