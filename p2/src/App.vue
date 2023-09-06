@@ -2,38 +2,43 @@
 import {ref} from 'vue'
 const location = 'Dhaka' 
 const weather  = ref("s") 
+
 const status_size = 'text-2xl'
+const bgOrange="bg-orange-400"
+const bgIndigo="bg-indigo-400"
+const bgGreen="bg-green-400"
+const weekday = true
+const colors = {
+    bgColor:'bg-teal-100',
+    borderColor:'border-teal-500',
+    textColor:'text-teal-900'
+}
+const messageType = 'error'
+if('error'==messageType){
+    colors.bgColor='bg-red-100',
+    colors.borderColor='border-red-500',
+    colors.textColor='text-red-900'
+}
 </script>
 
 <template>
-
-<section class="container mx-auto flex items-center flex-col">
-        <h1 class="text-center text-2xl py-10">Logic</h1>
-        <div class="w-1/3 bg-black-200 p-10 flex items-center flex-col space-y-10">
-            <h1 class="text-3xl">Dhaka</h1>
-            <template v-if="weather=='s'">
-                <h2 :class="status_size">Weather: Sunney</h2>
-                <img id="sunney" src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7911203/weather-icon-md.png" alt="">
-            </template>
-            <template v-if="weather=='pc'">
-                <h2 :class="status_size">Weather: Partly Cloudy</h2>
-                <img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7912718/weather-icon-md.png" alt="">
-            </template>
-            <template v-if="weather=='r'">
-                <h2 :class="status_size">Weather: Rainy</h2>
-                <img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7913380/weather-icon-md.png" alt="">
-
-            </template>
-            <template v-if="weather=='t'">
-                <h2 :class="status_size">Weather: Thunderstrom</h2>
-                <img src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/7912589/weather-icon-md.png" alt="">
-            </template>
-
-            <input type="text" placeholder="Weather Status" class="text-center p-5" v-model="weather">
-
-        </div>
-    </section>
-
+<section class="container mx-auto">
+    <h1 class="text-center text-3xl py-12">Class Style Binding</h1>
+        <section class="flex space-x-10">
+            <div class="w-1/3 h-16 p-5" :class="bgOrange">Orang</div>
+            <div class="w-1/3 h-16 p-5" :class="bgIndigo">Indigo</div>
+            <div class="w-1/3 h-16 p-5" :class="bgGreen">Green</div>
+        </section>
+        <section class="mt-10">
+            <div class="h-16 flex items-center justify-center text-white p-3" :class="[weekday?'bg-red-400':'bg-green-400',weekday==true?'text-2xl':'text-4xl']">It's a Weekday!</div>
+        </section>
+        <section class="mt-10">
+            <div class="border-t-4 round-b py-3 shadow-md" :class="[colors.bgColor, colors.borderColor, colors.textColor]">
+                <p class="font-bold">Our privacy policy has change</p>
+                <p class="text-sm">Make sure you knowhow these hangese effect you.</p>
+            </div>
+        </section>
+</section>
 </template>
 
 <style scoped>
