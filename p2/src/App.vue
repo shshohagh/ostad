@@ -1,43 +1,16 @@
 <script setup>
-import {ref} from 'vue'
-const location = 'Dhaka' 
-const weather  = ref("s") 
-
-const status_size = 'text-2xl'
-const bgOrange="bg-orange-400"
-const bgIndigo="bg-indigo-400"
-const bgGreen="bg-green-400"
-const weekday = true
-const colors = {
-    bgColor:'bg-teal-100',
-    borderColor:'border-teal-500',
-    textColor:'text-teal-900'
-}
-const messageType = 'error'
-if('error'==messageType){
-    colors.bgColor='bg-red-100',
-    colors.borderColor='border-red-500',
-    colors.textColor='text-red-900'
-}
+const items = [1,2,3,4,5]
 </script>
 
 <template>
 <section class="container mx-auto">
-    <h1 class="text-center text-3xl py-12">Class Style Binding</h1>
-        <section class="flex space-x-10">
-            <div class="w-1/3 h-16 p-5" :class="bgOrange">Orang</div>
-            <div class="w-1/3 h-16 p-5" :class="bgIndigo">Indigo</div>
-            <div class="w-1/3 h-16 p-5" :class="bgGreen">Green</div>
+    <h1 class="text-center text-3xl py-5"> List Rendering</h1>
+        <section class="mt-1">
+            <div class="h-16 flex items-center justify-center text-white p-3 mx-12 my-1 border border-indigo-400" v-for="item in items" > {{ item }} </div>
+
+            <div class="h-16 flex items-center justify-center text-white p-3 mx-12 my-1 border border-orange-400" v-for="n in 5" > {{ n }} </div>
         </section>
-        <section class="mt-10">
-            <div class="h-16 flex items-center justify-center text-white p-3" :class="[weekday?'bg-red-400':'bg-green-400',weekday==true?'text-2xl':'text-4xl']">It's a Weekday!</div>
-        </section>
-        <section class="mt-10">
-            <div class="border-t-4 round-b py-3 shadow-md" :class="[colors.bgColor, colors.borderColor, colors.textColor]">
-                <p class="font-bold">Our privacy policy has change</p>
-                <p class="text-sm">Make sure you knowhow these hangese effect you.</p>
-            </div>
-        </section>
+        
 </section>
 </template>
 
